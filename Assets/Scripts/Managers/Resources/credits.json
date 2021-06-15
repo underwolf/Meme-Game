@@ -1,0 +1,31 @@
+{
+    "titleSize": 80,
+    "nameSize": 48,
+    "teams": 
+    [
+        {
+            "names": ["Bruno E. Manochio"],
+            "title": "Arte"
+        },
+        {
+            "names": ["Sergio Luis B. Felipeti", "Matheus Augusto V. Barreiro"],
+            "title": "Progamação"
+        }, 
+        {
+            "names": ["Matheus Augusto V. Barreiro"],
+            "title": "Level Design"
+        },
+		{
+            "names": ["Bruno E. Manochio", "Matheus Augusto V. Barreiro", "Sergio Luis B. Felipeti"],
+            "title": "Game Design"
+        },
+		{
+            "names": ["Unity 3D", "GIMP Image Editor"],
+            "title": "Ferramentas"
+        },
+		{
+            "names": ["esses são os créditos", "sai daqui"],
+            "title": "é isso"
+        }
+    ]
+}
