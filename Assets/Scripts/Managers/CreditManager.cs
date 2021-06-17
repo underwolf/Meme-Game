@@ -10,7 +10,7 @@ public class CreditManager : MonoBehaviour
 
     [Header("Setup")]
     public string m_Filename = "credits";
-    [Range(10.0f, 50.0f)]
+    [Range(10.0f, 100.0f)]
     public float m_ScrollSpeed = 20.0f;
 
     private void Start()
