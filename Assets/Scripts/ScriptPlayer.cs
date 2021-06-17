@@ -187,6 +187,7 @@ public class ScriptPlayer : MonoBehaviour
                     animator.SetInteger("mask", 1);
 
                 }
+                GameObject.FindObjectOfType<ChangePlayerUI>().SetCharacter(mascarasIndex, mascarasIndex - 1);
             }
             if (Input.GetKeyDown("q"))
             {
@@ -208,7 +209,7 @@ public class ScriptPlayer : MonoBehaviour
                     Debug.Log("Setando mascara 0 segunda vez no q;");
                     animator.SetInteger("mask", 0);
                 }
-
+                GameObject.FindObjectOfType<ChangePlayerUI>().SetCharacter(mascarasIndex, mascarasIndex + 1);
             }
         }
     }
