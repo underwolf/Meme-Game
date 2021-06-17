@@ -72,7 +72,7 @@ public class MoveUI : MonoBehaviour, BehaviorUI
             if (m_Completed) m_State = MoveState.Idle;
         }
 
-        m_ElapsedTime += Time.deltaTime;
+        m_ElapsedTime += Time.unscaledDeltaTime;
         //m_ElapsedTime += Time.unscaledDeltaTime;
     }
 

@@ -38,6 +38,8 @@ public class ScriptPlayer : MonoBehaviour
     public GameObject gameManager,boss;
     private bool bossHit=false;
     private float startTime;
+
+    public bool isPaused;
     private void Awake()
     {
         boxCollider2d = transform.GetComponent<BoxCollider2D>();
@@ -46,22 +48,26 @@ public class ScriptPlayer : MonoBehaviour
     void Update()
     {
 
-        mover();
-        atirar();
-        changeMask();
-        animator.SetFloat("speed", Mathf.Abs(horizontalMove));
-        if (Input.GetKeyDown("r"))
+        if (!isPaused)
         {
-            startTime = Time.time;
-        }
-        if (Input.GetKeyUp("r"))
-        {
-            if (Time.time - startTime > 0.6f)
+            mover();
+            atirar();
+            changeMask();
+            animator.SetFloat("speed", Mathf.Abs(horizontalMove));
+            if (Input.GetKeyDown("r"))
             {
-                death();
+                startTime = Time.time;
             }
-            
+            if (Input.GetKeyUp("r"))
+            {
+                if (Time.time - startTime > 0.6f)
+                {
+                    death();
+                }
+
+            }
         }
+
     }
     void mover()
     {
@@ -215,9 +221,12 @@ public class ScriptPlayer : MonoBehaviour
     }
     public void death()
     {
+        GameObject.FindObjectOfType<ScreenManager>().LoadLevelLoading("GameOver");
         speed = 0;
         proximoTiro = 9999;
-        gameManager.GetComponent<levelManager>().Respawn();
+        
+
+
     }
     void Flip()
     {

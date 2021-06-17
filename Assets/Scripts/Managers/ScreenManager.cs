@@ -34,7 +34,8 @@ public class ScreenManager : MonoBehaviour
 
     public void LoadLevelLoading(string nextSceneName)
     {
-        PlayerPrefs.SetString("LAST_LEVEL", nextSceneName);
+        PlayerPrefs.SetString("LAST_LEVEL", SceneManager.GetActiveScene().name);
+        Debug.Log(PlayerPrefs.GetString("LAST_LEVEL"));
         StartCoroutine(ChangeScene(nextSceneName, true));
     }
 
@@ -88,7 +89,9 @@ public class ScreenManager : MonoBehaviour
 
     public void TryAgain()
     {
+        
         var nextSceneName = PlayerPrefs.GetString("LAST_LEVEL");
+        Debug.Log(nextSceneName);
         LoadLevelLoading(nextSceneName);
     }
 

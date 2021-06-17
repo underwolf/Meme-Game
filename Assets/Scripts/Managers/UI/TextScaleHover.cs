@@ -28,16 +28,16 @@ public class TextScaleHover : MonoBehaviour
         m_PointerState = false;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if(m_PointerState == true)
         {
 
-            transform.localScale = Vector3.Lerp(transform.localScale, m_SelectedScale, (m_SmoothTime * Time.deltaTime));
+            transform.localScale = Vector3.Lerp(transform.localScale, m_SelectedScale, (m_SmoothTime * Time.unscaledDeltaTime));
         }
         if(m_PointerState == false)
         {
-            transform.localScale = Vector3.Lerp(transform.localScale, m_OriginalScale, (m_SmoothTime * Time.deltaTime));
+            transform.localScale = Vector3.Lerp(transform.localScale, m_OriginalScale, (m_SmoothTime * Time.unscaledDeltaTime));
         }
        
     }
